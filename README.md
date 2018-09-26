@@ -1,4 +1,4 @@
-# decathlon-comparador
+# comparador
 
 ## Project setup
 ```

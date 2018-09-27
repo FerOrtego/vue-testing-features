@@ -1,8 +1,8 @@
 <template>
     <div class="products">
         <ul>
-            <li class="item1"><router-link to="/">CINTAS DE CORRER</router-link> </li>
-            <li class="item2"><router-link to="">BICICLETAS ELÍPTICAS</router-link></li>
+            <li class="item1"><router-link to="/cintas-de-correr">CINTAS DE CORRER</router-link> </li>
+            <li class="item2"><router-link to="/elipticas">BICICLETAS ELÍPTICAS</router-link></li>
             <li class="item3"><router-link to="">BICICLETAS ESTATICAS</router-link></li>
             <li class="item4"><router-link to="">BIKING</router-link></li>
             <li class="item5"><router-link to="">REMOS</router-link></li>
@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: 'test',
+  name: 'Comparador',
   props: {
     msg: String
   }

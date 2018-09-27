@@ -26,7 +26,7 @@ export default {
     msg: String
   },
   mounted () {
-    HTTP.get('')
+    HTTP.get('https://pokeapi.co/api/v2/pokemon/1/')
       .then((response) => {
         console.log(response.data)
         this.machineinfo = response.data

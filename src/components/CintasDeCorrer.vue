@@ -1,7 +1,15 @@
 <template>
     <div class="products" v-if="!!machineinfo">
         <ul>
-            <li class="item1"><router-link to=""><Card :machineinfo="machineinfo"/></router-link> </li>
+            <li class="item1">
+                <router-link
+                    to=""><Card
+                    v-for="machineinfo in listMachines"
+                    :key="machineinfo"
+                    :machineinfo="machineinfo"
+                    />
+                </router-link>
+            </li>
             <li class="item2"><router-link to="">CINTA 2</router-link></li>
             <li class="item3"><router-link to="">CINTA 3</router-link></li>
             <li class="item4"><router-link to="">CINTA 4</router-link></li>
@@ -34,6 +42,7 @@ export default {
   data: function () {
     return {
       machineinfo: { Type: Object, Required: false },
+      machines: null,
       swiperOption: {
         slidesPerView: 4,
         spaceBetween: 20,
@@ -52,7 +61,7 @@ export default {
   },
   methods: {
     getData: async function () {
-      let url = 'https://pokeapi.co/api/v2/pokemon/1/'
+      let url = 'https://pokeapi.co/api/v2/pokemon/'
       service
         .callFetch(url)
         .then(data => {
@@ -61,6 +70,13 @@ export default {
         .catch(error => {
           console.log(error)
         })
+    }
+  },
+  computed: {
+    listMachines: function () {
+      let result = this.machines
+      result = this.machineinfo.results.length
+      return result
     }
   }
 

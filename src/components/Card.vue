@@ -1,9 +1,9 @@
 <template>
     <!--Contenedor de todas las cards de una misma disciplina-->
-    <div class="card-wrapper" v-if="!!machineinfo && !!machineinfo.forms">
+    <div class="card-wrapper" v-if="!!machineinfo && !!machineinfo.results">
         <div class="card-wrapper-header">
             <div class="card-wrapper-header-discipline">
-                {{ machineinfo.forms[0].name }}
+                {{ machineinfo.results.name }}
             </div>
         </div>
         <div class="card-container">

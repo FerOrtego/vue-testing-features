@@ -1,5 +1,5 @@
 <template>
-    <div class="products" v-if="machineinfo !=null">
+    <div class="products" v-if="!!machineinfo">
         <ul>
             <li class="item1"><router-link to=""><Card :machineinfo="machineinfo"/></router-link> </li>
             <li class="item2"><router-link to="">CINTA 2</router-link></li>
@@ -7,32 +7,61 @@
             <li class="item4"><router-link to="">CINTA 4</router-link></li>
             <li class="item5"><router-link to="">CINTA 5</router-link></li>
         </ul>
+        <swiper :options="swiperOption">
+            <swiper-slide><router-link to=""><Card :machineinfo="machineinfo"/></router-link></swiper-slide>
+            <swiper-slide><router-link to=""><Card :machineinfo="machineinfo"/></router-link></swiper-slide>
+            <swiper-slide><router-link to=""><Card :machineinfo="machineinfo"/></router-link></swiper-slide>
+            <swiper-slide><router-link to=""><Card :machineinfo="machineinfo"/></router-link></swiper-slide>
+            <swiper-slide><router-link to=""><Card :machineinfo="machineinfo"/></router-link></swiper-slide>
+            <swiper-slide><router-link to=""><Card :machineinfo="machineinfo"/></router-link></swiper-slide>
+            <swiper-slide><router-link to=""><Card :machineinfo="machineinfo"/></router-link></swiper-slide>
+            <swiper-slide><router-link to=""><Card :machineinfo="machineinfo"/></router-link></swiper-slide>
+            <swiper-slide><router-link to=""><Card :machineinfo="machineinfo"/></router-link></swiper-slide>
+            <swiper-slide><router-link to=""><Card :machineinfo="machineinfo"/></router-link></swiper-slide>
+            <!--<div class="swiper-pagination" slot="pagination"></div> con esta linea se añaden bullets-->
+        </swiper>
     </div>
 </template>
 
 <script>
 import Card from './Card'
-import { HTTP } from '../http/http-config'
+// import { HTTP } from '../http/http-config'
+import service from '../services/fetch.js'
 
 export default {
   name: 'Cintasdecorrer',
   components: { Card },
   data: function () {
     return {
-      machineinfo: { Type: Object, Required: false }
+      machineinfo: { Type: Object, Required: false },
+      swiperOption: {
+        slidesPerView: 4,
+        spaceBetween: 20,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        }
+      }
     }
   },
   props: {
     msg: String
   },
   mounted () {
-    HTTP.get('https://pokeapi.co/api/v2/pokemon/1/')
-      .then((response) => {
-        console.log(response.data)
-        this.machineinfo = response.data
-      }).catch(error => {
-        console.log(error)
-      })
+    this.getData()
+  },
+  methods: {
+    getData: async function () {
+      let url = 'https://pokeapi.co/api/v2/pokemon/1/'
+      service
+        .callFetch(url)
+        .then(data => {
+          this.machineinfo = data
+        })
+        .catch(error => {
+          console.log(error)
+        })
+    }
   }
 
 }

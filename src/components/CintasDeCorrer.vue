@@ -4,28 +4,28 @@
             <li class="item1">
                 <router-link
                     to=""><Card
-                    v-for="machineinfo in listMachines"
-                    :key="machineinfo"
-                    :machineinfo="machineinfo"
+                        v-foreach="machineinfo.results in
+                        machineinfo"
+                        :machineinfo="machineinfo.results"
                     />
                 </router-link>
             </li>
-            <li class="item2"><router-link to="">CINTA 2</router-link></li>
+            <li class="item2"><router-link to=""><Card :machineinfo="machineinfo"/></router-link></li>
             <li class="item3"><router-link to="">CINTA 3</router-link></li>
             <li class="item4"><router-link to="">CINTA 4</router-link></li>
             <li class="item5"><router-link to="">CINTA 5</router-link></li>
         </ul>
         <swiper :options="swiperOption">
             <swiper-slide><router-link to=""><Card :machineinfo="machineinfo"/></router-link></swiper-slide>
-            <swiper-slide><router-link to=""><Card :machineinfo="machineinfo"/></router-link></swiper-slide>
-            <swiper-slide><router-link to=""><Card :machineinfo="machineinfo"/></router-link></swiper-slide>
-            <swiper-slide><router-link to=""><Card :machineinfo="machineinfo"/></router-link></swiper-slide>
-            <swiper-slide><router-link to=""><Card :machineinfo="machineinfo"/></router-link></swiper-slide>
-            <swiper-slide><router-link to=""><Card :machineinfo="machineinfo"/></router-link></swiper-slide>
-            <swiper-slide><router-link to=""><Card :machineinfo="machineinfo"/></router-link></swiper-slide>
-            <swiper-slide><router-link to=""><Card :machineinfo="machineinfo"/></router-link></swiper-slide>
-            <swiper-slide><router-link to=""><Card :machineinfo="machineinfo"/></router-link></swiper-slide>
-            <swiper-slide><router-link to=""><Card :machineinfo="machineinfo"/></router-link></swiper-slide>
+            <!--<swiper-slide><router-link to=""><Card :machineinfo="machineinfo"/></router-link></swiper-slide>-->
+            <!--<swiper-slide><router-link to=""><Card :machineinfo="machineinfo"/></router-link></swiper-slide>-->
+            <!--<swiper-slide><router-link to=""><Card :machineinfo="machineinfo"/></router-link></swiper-slide>-->
+            <!--<swiper-slide><router-link to=""><Card :machineinfo="machineinfo"/></router-link></swiper-slide>-->
+            <!--<swiper-slide><router-link to=""><Card :machineinfo="machineinfo"/></router-link></swiper-slide>-->
+            <!--<swiper-slide><router-link to=""><Card :machineinfo="machineinfo"/></router-link></swiper-slide>-->
+            <!--<swiper-slide><router-link to=""><Card :machineinfo="machineinfo"/></router-link></swiper-slide>-->
+            <!--<swiper-slide><router-link to=""><Card :machineinfo="machineinfo"/></router-link></swiper-slide>-->
+            <!--<swiper-slide><router-link to=""><Card :machineinfo="machineinfo"/></router-link></swiper-slide>-->
             <!--<div class="swiper-pagination" slot="pagination"></div> con esta linea se añaden bullets-->
         </swiper>
     </div>
@@ -56,7 +56,7 @@ export default {
   props: {
     msg: String
   },
-  mounted () {
+  created () {
     this.getData()
   },
   methods: {

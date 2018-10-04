@@ -3,7 +3,7 @@
     <div class="card-wrapper" v-if="!!machineinfo && !!machineinfo.results">
         <div class="card-wrapper-header">
             <div class="card-wrapper-header-discipline">
-                {{ machineinfo.results.name }}
+                {{ machineinfo.name }}
             </div>
         </div>
         <div class="card-container">
@@ -31,7 +31,7 @@
 export default {
   name: 'Card',
   props: {
-    machineinfo: { type: Object, required: true }
+    machineinfo: { Type: Object, Required: true }
   },
   data: function () {
     return {
@@ -39,7 +39,7 @@ export default {
     }
   },
   mounted () {
-    console.log(this.machineinfo)
+    console.log(this.machineinfo.results)
   },
   computed: {
 

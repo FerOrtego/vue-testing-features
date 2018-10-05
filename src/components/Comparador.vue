@@ -14,21 +14,48 @@
                     <ul class="products-list">
                         <li class="categoria">
                             <router-link to="/cintas-de-correr">
-                                <div class="nombre-categoria"><span>CINTAS DE CORRER</span></div>
+                                <div class="categora-texto-contaner">
+                                    <div class="nombre-categoria"><span>CINTAS DE CORRER</span></div>
+                                    <div class="numero-articulos"><span>12 articulos</span></div>
+                                </div>
                                 <div class="logo-categoria"></div>
                             </router-link>
                         </li>
                         <li class="categoria">
-                            <router-link to="/elipticas">BICICLETAS ELÍPTICAS</router-link>
+                            <router-link to="/elipticas">
+                                <div class="categora-texto-contaner">
+                                    <div class="nombre-categoria"><span>BICICLETAS ELÍPTICAS</span></div>
+                                    <div class="numero-articulos"><span>12 articulos</span></div>
+                                </div>
+                                <div class="logo-categoria"></div>
+                            </router-link>
                         </li>
                         <li class="categoria">
-                            <router-link to="">BICICLETAS ESTATICAS</router-link>
+                            <router-link to="/cintas-de-correr">
+                                <div class="categora-texto-contaner">
+                                    <div class="nombre-categoria"><span>BICICLETAS ESTATICAS</span></div>
+                                    <div class="numero-articulos"><span>12 articulos</span></div>
+                                </div>
+                                <div class="logo-categoria"></div>
+                            </router-link>
                         </li>
                         <li class="categoria">
-                            <router-link to="">BIKING</router-link>
+                            <router-link to="/cintas-de-correr">
+                                <div class="categora-texto-contaner">
+                                    <div class="nombre-categoria"><span>BIKING</span></div>
+                                    <div class="numero-articulos"><span>12 articulos</span></div>
+                                </div>
+                                <div class="logo-categoria"></div>
+                            </router-link>
                         </li>
                         <li class="categoria">
-                            <router-link to="">REMOS</router-link>
+                            <router-link to="/cintas-de-correr">
+                                <div class="categora-texto-contaner">
+                                    <div class="nombre-categoria"><span>REMOS</span></div>
+                                    <div class="numero-articulos"><span>12 articulos</span></div>
+                                </div>
+                                <div class="logo-categoria"></div>
+                            </router-link>
                         </li>
                     </ul>
                 </div>
@@ -48,7 +75,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-
+    section{
+        padding-top: 2%;
+        padding-bottom: 2%;
+    }
     header .header {
         width: 100%;
         height: 259px;
@@ -88,25 +118,49 @@ export default {
     }
 
     .categoria {
+        display: inline-block;
         width: 100%;
         height: 350px;
         background-color: #ffffff;
         box-shadow: 0 0 10px 0.1px rgba(0, 0, 0, 0.4);
-        .nombre-categoria {
-            width: 70;
-            font-family: 'Roboto', sans-serif;
-            font-size: 70px;
-            font-weight: bold;
-            font-style: italic;
-            font-stretch: condensed;
-            line-height: 0.91;
-            letter-spacing: -4.4px;
-            color: #242323;
+        padding: 2% 0;
+        .categora-texto-contaner {
+            width: 70%;
+            float: left;
+            padding-top: 5%;
+            padding-left: 9%;
+            .nombre-categoria {
+                span {
+                    font-family: Roboto;
+                    font-size: 70px;
+                    font-weight: bold;
+                    font-style: italic;
+                    font-stretch: condensed;
+                    line-height: 0.91;
+                    letter-spacing: -4.4px;
+                    color: #242323;
+                }
+            }
+            .numero-articulos {
+                height: 157px;
+                span {
+                    font-family: Roboto;
+                    font-size: 42px;
+                    font-weight: normal;
+                    font-style: italic;
+                    font-stretch: condensed;
+                    line-height: 1.52;
+                    letter-spacing: -2.6px;
+                    color: #0082c9;
+                }
+            }
         }
         .logo-categoria {
+            display: inline-block;
             width: 30%;
             height: 350px;
             background-color: #0082c9;
         }
     }
+
 </style>

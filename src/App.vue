@@ -15,9 +15,13 @@ export default {
 
 <style lang="scss">
   HTML, body {
+    box-sizing: border-box;
     margin: 0px;
     padding: 0px;
     border: 0px;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
   }
   a {
     text-decoration: none;

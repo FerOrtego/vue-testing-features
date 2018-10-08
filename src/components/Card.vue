@@ -1,9 +1,10 @@
 <template>
     <!--Contenedor de todas las cards de una misma disciplina-->
-    <div class="card-wrapper" v-if="!!machineinfo && !!machineinfo.results">
+    <div class="card-wrapper" v-if="!!machineinfo">
         <div class="card-wrapper-header">
             <div class="card-wrapper-header-discipline">
-                {{ machineinfo.name }}
+                {{ machineinfo.id }}
+                {{ machineinfo.title}}
             </div>
         </div>
         <div class="card-container">
@@ -39,7 +40,6 @@ export default {
     }
   },
   mounted () {
-    console.log(this.machineinfo.results)
   },
   computed: {
 

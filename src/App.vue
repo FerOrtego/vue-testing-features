@@ -30,4 +30,18 @@ export default {
     text-decoration: none;
     cursor: pointer;
   }
+
+  @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+  html, body {
+    font-family: 'Roboto', sans-serif;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+  }
+
+  #app {
+    font-family: 'Roboto', sans-serif;
+  }
 </style>

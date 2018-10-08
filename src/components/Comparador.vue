@@ -14,7 +14,7 @@
                     <ul class="products-list">
                         <li class="categoria">
                             <router-link to="/cintas-de-correr">
-                                <div class="categora-texto-contaner">
+                                <div class="categoria-texto-contaner">
                                     <div class="nombre-categoria"><span>CINTAS DE CORRER</span></div>
                                     <div class="numero-articulos"><span>12 articulos</span></div>
                                 </div>
@@ -23,7 +23,7 @@
                         </li>
                         <li class="categoria">
                             <router-link to="/elipticas">
-                                <div class="categora-texto-contaner">
+                                <div class="categoria-texto-contaner">
                                     <div class="nombre-categoria"><span>BICICLETAS ELÍPTICAS</span></div>
                                     <div class="numero-articulos"><span>12 articulos</span></div>
                                 </div>
@@ -32,7 +32,7 @@
                         </li>
                         <li class="categoria">
                             <router-link to="/cintas-de-correr">
-                                <div class="categora-texto-contaner">
+                                <div class="categoria-texto-contaner">
                                     <div class="nombre-categoria"><span>BICICLETAS ESTATICAS</span></div>
                                     <div class="numero-articulos"><span>12 articulos</span></div>
                                 </div>
@@ -41,7 +41,7 @@
                         </li>
                         <li class="categoria">
                             <router-link to="/cintas-de-correr">
-                                <div class="categora-texto-contaner">
+                                <div class="categoria-texto-contaner">
                                     <div class="nombre-categoria"><span>BIKING</span></div>
                                     <div class="numero-articulos"><span>12 articulos</span></div>
                                 </div>
@@ -50,7 +50,7 @@
                         </li>
                         <li class="categoria">
                             <router-link to="/cintas-de-correr">
-                                <div class="categora-texto-contaner">
+                                <div class="categoria-texto-contaner">
                                     <div class="nombre-categoria"><span>REMOS</span></div>
                                     <div class="numero-articulos"><span>12 articulos</span></div>
                                 </div>
@@ -75,8 +75,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+
     section{
-        padding-top: 2%;
+        padding-top: 1%;
         padding-bottom: 2%;
     }
     header .header {
@@ -123,15 +124,14 @@ export default {
         height: 350px;
         background-color: #ffffff;
         box-shadow: 0 0 10px 0.1px rgba(0, 0, 0, 0.4);
-        padding: 2% 0;
-        .categora-texto-contaner {
+        margin: 1% 0;
+        .categoria-texto-contaner {
             width: 70%;
             float: left;
             padding-top: 5%;
             padding-left: 9%;
             .nombre-categoria {
                 span {
-                    font-family: Roboto;
                     font-size: 70px;
                     font-weight: bold;
                     font-style: italic;
@@ -144,7 +144,6 @@ export default {
             .numero-articulos {
                 height: 157px;
                 span {
-                    font-family: Roboto;
                     font-size: 42px;
                     font-weight: normal;
                     font-style: italic;
@@ -160,6 +159,18 @@ export default {
             width: 30%;
             height: 350px;
             background-color: #0082c9;
+        }
+        .logo-categoria:after{
+            width: 63px;
+            height: 350px;
+            display: block;
+            position: relative;
+            top: 0;
+            left: -32px;
+            background: #0082C9;
+            content: '';
+            -webkit-transform: skewX(10deg);
+            transform: skewX(10deg);
         }
     }
 

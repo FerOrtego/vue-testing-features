@@ -3,11 +3,7 @@
         <ul>
             <li class="item1">
                 <router-link
-                    to=""><Card
-                        v-foreach="machineinfo.results in
-                        machineinfo"
-                        :machineinfo="machineinfo.results"
-                    />
+                    to=""><Card v-for="item in machineinfo" :key="item.index" :machineinfo="item"/>
                 </router-link>
             </li>
             <li class="item2"><router-link to=""><Card :machineinfo="machineinfo"/></router-link></li>
@@ -33,8 +29,7 @@
 
 <script>
 import Card from './Card'
-// import { HTTP } from '../http/http-config'
-import service from '../services/fetch.js'
+import axios from 'axios'
 
 export default {
   name: 'Cintasdecorrer',
@@ -43,6 +38,7 @@ export default {
     return {
       machineinfo: { Type: Object, Required: false },
       machines: null,
+      test: '',
       swiperOption: {
         slidesPerView: 4,
         spaceBetween: 20,
@@ -54,32 +50,35 @@ export default {
     }
   },
   props: {
-    msg: String
   },
   created () {
-    this.getData()
-  },
-  methods: {
-    getData: async function () {
-      let url = 'https://pokeapi.co/api/v2/pokemon/'
-      service
-        .callFetch(url)
-        .then(data => {
-          this.machineinfo = data
-        })
-        .catch(error => {
-          console.log(error)
-        })
-    }
-  },
-  computed: {
-    listMachines: function () {
-      let result = this.machines
-      result = this.machineinfo.results.length
-      return result
-    }
+    axios.get('http://jsonplaceholder.typicode.com/posts')
+      .then(response => {
+        this.machineinfo = response.data
+      }, error => {
+        console.error(error)
+      })
   }
-
+  // methods: {
+  //   mipost: function () {
+  //     let data = {
+  //       id: 1,
+  //       name: 'aaaa'
+  //     }
+  //     let options = {
+  //       headers: {
+  //         Authorization: 'Bearer ' + token
+  //       }
+  //     }
+  //     axios.post('http://jsonplaceholder.typicode.com/posts', data, options)
+  //       .then(response => {
+  //         this.machineinfo = response.data
+  //       }, error => {
+  //         console.error(error)
+  //       })
+  //   },
+  //   computed: {}
+  // }
 }
 </script>
 
